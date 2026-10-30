@@ -62,6 +62,9 @@ export const HeroSection: React.FC = () => {
             <div className="relative rounded-2xl overflow-hidden border border-blue-500/30 bg-[#070B16] shadow-2xl shadow-blue-950/60 transition-transform duration-500 hover:scale-[1.01]">
               <img
                 src={ASSETS.guideMockup}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = '/images/viral_master_guide_mockup_1793370554906.jpg';
+                }}
                 alt="Mockup 3D de la Guía Viral Master Pro"
                 className="w-full h-auto object-cover max-h-[460px]"
                 loading="eager"
@@ -99,6 +102,9 @@ export const HeroSection: React.FC = () => {
               <div className="relative rounded-xl overflow-hidden mb-3">
                 <img
                   src={ASSETS.phoneGrowth}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/images/smartphone_viral_growth_1793370555605.jpg';
+                  }}
                   alt="Estadísticas de crecimiento viral en smartphone"
                   className="w-full h-56 sm:h-64 object-cover object-center"
                   loading="lazy"

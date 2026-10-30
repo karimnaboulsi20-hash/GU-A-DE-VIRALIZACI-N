@@ -10,6 +10,9 @@ export const SocialProofStrip: React.FC = () => {
         <div className="relative h-64 sm:h-80 w-full overflow-hidden">
           <img
             src={ASSETS.studioBackdrop}
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = '/images/viral_creator_studio_1793370556742.jpg';
+            }}
             alt="Estudio de creación y análisis viral"
             className="w-full h-full object-cover object-center filter brightness-90"
             loading="lazy"

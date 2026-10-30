@@ -1,9 +1,12 @@
 import { BenefitItem, BonusItem, FaqItem } from '../types';
+import guideMockup from '../assets/images/viral_master_guide_mockup_1793370554906.jpg';
+import phoneGrowth from '../assets/images/smartphone_viral_growth_1793370555605.jpg';
+import studioBackdrop from '../assets/images/viral_creator_studio_1793370556742.jpg';
 
 export const ASSETS = {
-  guideMockup: '/src/assets/images/viral_master_guide_mockup_1793370554906.jpg',
-  phoneGrowth: '/src/assets/images/smartphone_viral_growth_1793370555605.jpg',
-  studioBackdrop: '/src/assets/images/viral_creator_studio_1793370556742.jpg',
+  guideMockup,
+  phoneGrowth,
+  studioBackdrop,
 };
 
 export const PROBLEM_STATEMENT = {
