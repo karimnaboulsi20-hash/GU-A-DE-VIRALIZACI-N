@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: "Outfit", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-electric-blue: #0066FF;
+  --color-electric-cyan: #00F0FF;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #06080F;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-display);
+}
+
+/* Custom electric glow and ambient styles */
+.glow-electric-blue {
+  box-shadow: 0 0 50px -10px rgba(0, 102, 255, 0.35);
+}
+
+.glow-electric-cyan {
+  box-shadow: 0 0 45px -8px rgba(0, 240, 255, 0.35);
+}
+
+.glow-button-pulse {
+  box-shadow: 0 0 25px 0 rgba(0, 150, 255, 0.45);
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px 2px rgba(0, 150, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px 8px rgba(0, 240, 255, 0.65);
+  }
+}
+
+/* Subtle background cyber grid */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}

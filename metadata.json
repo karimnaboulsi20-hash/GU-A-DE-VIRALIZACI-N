@@ -1,0 +1,6 @@
+{
+  "name": "Pack Viral Master - Upsell Exclusivo",
+  "description": "Página oficial de Upsell para Pack Viral Master: Aprende la estrategia comprobada para viralizar tus videos, dominar el algoritmo y acelerar tus resultados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
