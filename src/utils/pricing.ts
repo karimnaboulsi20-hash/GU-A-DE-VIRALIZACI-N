@@ -7,7 +7,7 @@ export const CURRENCY_RATES: Record<CurrencyCode, CurrencyConfig> = {
     code: 'USD',
     symbol: '$',
     regularPrice: 67,
-    offerPrice: 15,
+    offerPrice: 9,
     rate: 1,
   },
   EUR: {

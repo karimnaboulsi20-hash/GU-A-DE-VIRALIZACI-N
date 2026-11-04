@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Sparkles, TrendingUp, AlertTriangle, CheckCircle, RefreshCw } from 'lucide-react';
+import { Sparkles, TrendingUp, AlertTriangle } from 'lucide-react';
 
 interface HookExample {
   category: string;
@@ -53,17 +53,17 @@ export const InteractiveHookSimulator: React.FC = () => {
 
   return (
     <section className="py-12 px-4 max-w-5xl mx-auto">
-      <div className="rounded-2xl border border-blue-500/30 bg-gradient-to-b from-[#090E20] to-[#06080F] p-6 sm:p-8 shadow-2xl">
+      <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6 sm:p-8 shadow-2xl">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 text-xs font-semibold mb-3">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-emerald-400 text-xs font-semibold mb-3">
             <Sparkles className="w-3.5 h-3.5" />
             Demostración En Vivo: El Poder Del Gancho
           </div>
           <h3 className="font-heading text-xl sm:text-2xl md:text-3xl font-extrabold text-white uppercase tracking-tight">
             Mismo Video, Distinta Estrategia = Resultados Opuestos
           </h3>
-          <p className="text-slate-400 text-xs sm:text-sm mt-1.5">
+          <p className="text-zinc-400 text-xs sm:text-sm mt-1.5">
             Selecciona una temática y compara qué pasa cuando aplicas las fórmulas de viralización del manual:
           </p>
         </div>
@@ -79,8 +79,8 @@ export const InteractiveHookSimulator: React.FC = () => {
               }}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 selectedIndex === idx
-                  ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/30 font-bold'
-                  : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800'
+                  ? 'bg-emerald-500 text-zinc-950 shadow-md font-bold'
+                  : 'bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800'
               }`}
             >
               {ex.category}
@@ -95,8 +95,8 @@ export const InteractiveHookSimulator: React.FC = () => {
             onClick={() => setMode('normal')}
             className={`p-5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
               mode === 'normal'
-                ? 'bg-red-950/20 border-red-500 shadow-lg'
-                : 'bg-slate-950/60 border-slate-800 opacity-70 hover:opacity-100'
+                ? 'bg-red-950/20 border-red-500/50 shadow-lg'
+                : 'bg-zinc-900/60 border-zinc-800 opacity-70 hover:opacity-100'
             }`}
           >
             <div>
@@ -109,20 +109,20 @@ export const InteractiveHookSimulator: React.FC = () => {
                   Fracaso Común
                 </span>
               </div>
-              <p className="text-xs text-slate-400 mb-1">Título / Gancho usado:</p>
-              <p className="text-sm font-semibold text-slate-200 mb-4 bg-slate-900/90 p-3 rounded-lg border border-slate-800">
+              <p className="text-xs text-zinc-400 mb-1">Título / Gancho usado:</p>
+              <p className="text-sm font-semibold text-zinc-200 mb-4 bg-zinc-900 p-3 rounded-lg border border-zinc-800">
                 &ldquo;{current.normalTitle}&rdquo;
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-800/80 space-y-2">
+            <div className="pt-3 border-t border-zinc-800 space-y-2">
               <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-400">Alcance final:</span>
+                <span className="text-zinc-400">Alcance final:</span>
                 <span className="font-mono font-bold text-red-400">{current.normalViews}</span>
               </div>
               <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-400">Retención de audiencia:</span>
-                <span className="font-mono text-slate-300">{current.normalRetention}</span>
+                <span className="text-zinc-400">Retención de audiencia:</span>
+                <span className="font-mono text-zinc-300">{current.normalRetention}</span>
               </div>
             </div>
           </div>
@@ -132,40 +132,40 @@ export const InteractiveHookSimulator: React.FC = () => {
             onClick={() => setMode('viral')}
             className={`p-5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
               mode === 'viral'
-                ? 'bg-blue-950/40 border-cyan-400 shadow-xl shadow-cyan-950/50'
-                : 'bg-slate-950/60 border-slate-800 opacity-70 hover:opacity-100'
+                ? 'bg-zinc-900 border-emerald-500 shadow-xl shadow-zinc-950/50'
+                : 'bg-zinc-900/60 border-zinc-800 opacity-70 hover:opacity-100'
             }`}
           >
             <div>
               <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
                   <TrendingUp className="w-3.5 h-3.5" />
                   Con Fórmula Viral Master Pro
                 </span>
-                <span className="text-xs px-2 py-0.5 rounded bg-blue-900 text-cyan-300 font-bold font-mono">
+                <span className="text-xs px-2 py-0.5 rounded bg-zinc-800 text-emerald-300 font-bold font-mono border border-zinc-700">
                   Multiplicador {current.growthFactor}
                 </span>
               </div>
-              <p className="text-xs text-cyan-300/80 mb-1 font-medium">Gancho Magnético Aplicado:</p>
-              <p className="text-sm font-bold text-white mb-4 bg-blue-950/80 p-3 rounded-lg border border-cyan-500/40 shadow-inner">
+              <p className="text-xs text-emerald-400 mb-1 font-medium">Gancho Magnético Aplicado:</p>
+              <p className="text-sm font-bold text-white mb-4 bg-zinc-950 p-3 rounded-lg border border-zinc-800 shadow-inner">
                 &ldquo;{current.viralHook}&rdquo;
               </p>
             </div>
 
-            <div className="pt-3 border-t border-cyan-500/30 space-y-2">
+            <div className="pt-3 border-t border-zinc-800 space-y-2">
               <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-300 font-medium">Alcance final:</span>
-                <span className="font-mono font-extrabold text-cyan-300 text-base">{current.viralViews}</span>
+                <span className="text-zinc-300 font-medium">Alcance final:</span>
+                <span className="font-mono font-extrabold text-emerald-400 text-base">{current.viralViews}</span>
               </div>
               <div className="flex justify-between items-center text-xs">
-                <span className="text-slate-300 font-medium">Retención de audiencia:</span>
+                <span className="text-zinc-300 font-medium">Retención de audiencia:</span>
                 <span className="font-mono font-bold text-emerald-400">{current.viralRetention}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <p className="text-center text-xs text-slate-400 mt-6">
+        <p className="text-center text-xs text-zinc-400 mt-6">
           *Dentro de la Guía recibirás más de 150 plantillas idénticas a esta para copiar, pegar y viralizar cualquiera de los videos de tu pack.
         </p>
       </div>
