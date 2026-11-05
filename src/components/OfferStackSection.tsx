@@ -8,6 +8,7 @@ import {
   calculateSavings,
   HOTMART_CHECKOUT_URL,
 } from '../utils/pricing';
+import { trackPixelEvent } from '../utils/pixel';
 
 interface Props {
   currency: CurrencyCode;
@@ -67,7 +68,7 @@ export const OfferStackSection: React.FC<Props> = ({
                   </p>
                 </div>
               </div>
-              <span className="text-xs font-semibold text-zinc-400 shrink-0 font-mono">
+              <span className="text-xs font-semibold text-slate-400 shrink-0 font-mono">
                 Valor: $67 USD
               </span>
             </div>
@@ -135,6 +136,7 @@ export const OfferStackSection: React.FC<Props> = ({
               href={HOTMART_CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackPixelEvent('InitiateCheckout', { value: currentPricing.offerPrice, currency: currentPricing.code })}
               className="w-full py-5 px-6 rounded-2xl font-heading font-black text-base sm:text-xl text-zinc-950 bg-gradient-to-r from-emerald-400 via-green-400 to-emerald-500 hover:from-emerald-300 hover:to-green-400 shadow-2xl shadow-emerald-500/50 hover:shadow-emerald-400/70 transition-all duration-200 transform active:scale-[0.99] flex items-center justify-center gap-3 cursor-pointer text-center"
             >
               <Zap className="w-6 h-6 fill-zinc-950 shrink-0" />

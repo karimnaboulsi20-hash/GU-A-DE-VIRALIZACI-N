@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, X, ShieldAlert } from 'lucide-react';
 import { CurrencyCode } from '../types';
 import { CURRENCY_RATES, HOTMART_CHECKOUT_URL } from '../utils/pricing';
+import { trackPixelEvent } from '../utils/pixel';
 
 interface Props {
   isOpen: boolean;
@@ -57,7 +58,10 @@ export const DeclineConfirmModal: React.FC<Props> = ({
             href={HOTMART_CHECKOUT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={onClose}
+            onClick={() => {
+              trackPixelEvent('InitiateCheckout', { value: currentPricing.offerPrice, currency: currentPricing.code });
+              onClose();
+            }}
             className="w-full py-3.5 px-5 rounded-xl font-heading font-black text-xs sm:text-sm text-zinc-950 bg-gradient-to-r from-emerald-400 via-green-400 to-emerald-500 hover:from-emerald-300 hover:to-green-400 shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer text-center"
           >
             <span>SÍ, QUIERO VIRALIZAR MÁS RÁPIDO POR SOLO {currentPricing.symbol}{currentPricing.offerPrice}</span>
